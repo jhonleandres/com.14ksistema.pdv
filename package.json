@@ -1,0 +1,124 @@
+{
+  "name": "pdv",
+  "version": "0.0.1",
+  "main": "build/electron.js",
+  "private": true,
+  "homepage": "./",
+  "author": {
+    "name": "Jhonleandres",
+    "email": "jhonleandres.silva@gmail.com"
+  },
+  "build": {
+    "appId": "com.14ksistema.pdv",
+    "productName": "PDV-14kSistema",
+    "copyright": "Copyright © 2021 ${author}",
+    "asar": true,
+    "files": [
+      "build/",
+      "node/",
+      "node_modules/",
+      "knexfile.js",
+      ".env"
+    ],
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "nsis": {
+      "perMachine": true
+    },
+    "extraFiles": [
+      "database"
+    ],
+    "directories": {
+      "buildResources": "./build",
+      "output": "./release"
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.3.5",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "knex": "^0.95.6",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux-devtools-extension": "^2.13.9",
+    "sqlite3": "^5.0.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "yarn react-watch:css && react-scripts start",
+    "build": "yarn react-watch:css && react-scripts build",
+    "react-test": "rescripts test",
+    "react-eject": "rescripts eject",
+    "react-watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "electron": "electron public/electron.js",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "pack": "electron-builder --dir",
+    "dist": "yarn build && electron-builder build",
+    "postinstall": "electron-builder install-app-deps",
+    "win-postinstall": "electron-builder --win --ia32 install-app-deps",
+    "win-pack": "electron-builder --win --ia32 --dir",
+    "win-dist": "electron-builder --win --ia32"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.16",
+    "@rescripts/rescript-env": "^0.0.14",
+    "@types/react-router-dom": "^5.1.7",
+    "autoprefixer": "^10.2.6",
+    "concurrently": "^6.2.0",
+    "electron": "^13.1.1",
+    "electron-builder": "^22.10.5",
+    "electron-reload": "^1.5.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "prettier": "^2.3.1",
+    "tailwindcss": "^2.1.4",
+    "ts-loader": "^9.2.3",
+    "wait-on": "^5.3.0"
+  }
+}
