@@ -4,6 +4,9 @@ const BrowserWindow = electron.BrowserWindow
 
 const path = require("path")
 const isDev = require("electron-is-dev")
+require('electron-reload')(__dirname, {
+  electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+});
  
 require(path.join(__dirname, '../node/index.js'))
 
