@@ -1,7 +1,7 @@
 {
   "name": "pdv",
   "version": "0.0.1",
-  "main": "build/electron.js",
+  "main": "public/electron.js",
   "private": true,
   "homepage": "./",
   "author": {
@@ -49,6 +49,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "consign": "^0.1.6",
