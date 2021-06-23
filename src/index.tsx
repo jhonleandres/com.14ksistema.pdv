@@ -1,7 +1,5 @@
-/* eslint-disable import/extensions */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// eslint-disable-next-line sort-imports
 import './assets/main.css';
 import App from './App';
 
