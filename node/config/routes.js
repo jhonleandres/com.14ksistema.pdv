@@ -1,9 +1,7 @@
-const isDev = require("electron-is-dev")
-
 module.exports = app => {
-    const controller = isDev ? app.api : app
-    const config = isDev ? app.config : app
-    // console.log(app)
+    const controller = app.api
+    const config = app.config
+    
     app.post('/signin', controller.auth.signin)
     app.post('/validateToken', controller.auth.validateToken)
 
