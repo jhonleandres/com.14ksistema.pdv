@@ -1,6 +1,6 @@
 
 module.exports = app =>{
-    // const { existsOrError, notExistsOrError /*, equalsOrError */ } = app.api.validator
+    const { existsOrError, notExistsOrError, equalsOrError } = app.api.validator
     
     const save = async (req, res) =>{
         return res.status(200).send('save')

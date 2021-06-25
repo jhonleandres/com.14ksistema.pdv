@@ -1,9 +1,7 @@
 const bcrypt = require('bcrypt')
-const isDev = require("electron-is-dev")
 
 module.exports = app =>{
-    const validator = isDev ? app.api.validator : app.validator
-    const { existsOrError, notExistsOrError, equalsOrError } = validator
+    const { existsOrError, notExistsOrError, equalsOrError } = app.api.validator
     
     const encryptPassword = password => {
         const salt = bcrypt.genSaltSync(10)
